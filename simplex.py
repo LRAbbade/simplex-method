@@ -1,7 +1,6 @@
 from fractions import Fraction
 from warnings import warn
 
-
 class Simplex(object):
     def __init__(self, num_vars, constraints, objective_function):
         """
@@ -17,7 +16,7 @@ class Simplex(object):
 
         objective_function: should be a tuple with first element
         either 'min' or 'max', and second element be the equation
-        eg 
+        eg
         ('min', '2x_1 + 4x_3 + 5x_2')
 
         For solution finding algorithm uses two-phase simplex method
@@ -271,4 +270,3 @@ def min_index(row):
             min_i = i
 
     return min_i
-
