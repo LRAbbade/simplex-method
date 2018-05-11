@@ -5,8 +5,8 @@ class Simplex(object):
         """
         num_vars: Number of variables
 
-        equations: A list of strings representing constraints
-        each variable should be start with x followed by a underscore
+        constraints: A list of strings representing constraints
+        each variable should start with the coefficient, then x followed by a underscore
         and a number
         eg of constraints
         ['1x_1 + 2x_2 >= 4', '2x_3 + 3x_1 <= 5', 'x_3 + 3x_2 = 6']
@@ -35,11 +35,18 @@ class Simplex(object):
         self.delete_r_vars()
 
         if 'min' in self.objective.lower():
-            self.solution = self.objective_minimize()
+            self._solution = self.objective_minimize()
 
         else:
-            self.solution = self.objective_maximize()
+            self._solution = self.objective_maximize()
         self.optimize_val = self.coeff_matrix[0][-1]
+
+    def solution(self):
+        r = 'Solution:\n'
+        for key, value in self._solution.items():
+            r += key + ' = ' + str(value) + '\n'
+
+        return r + self.objective + ' = ' + str(self.optimize_val)
 
     def construct_matrix_from_constraints(self, constraints):
         num_s_vars = 0  # number of slack and surplus variables
