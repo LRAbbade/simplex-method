@@ -26,8 +26,10 @@ Here is an example:
 >>> objective = ('min', '4x_1 + 1x_2')
 >>> constraints = ['3x_1 + 1x_2 = 3', '4x_1 + 3x_2 >= 6', '1x_1 + 2x_2 <= 4']
 >>> system = Simplex(num_vars=2, constraints=constraints, objective_function=objective)
->>> print(system.solution)
-{'x_2': Fraction(6, 5), 'x_1': Fraction(3, 5)}
->>> print(system.optimize_val)
-17/5
+>>> print(system.solution())
+Alternative solution exists.
+Solution:
+x_1 = 3/5
+x_2 = 6/5
+min = 17/5
 ```
