@@ -1,5 +1,4 @@
 from fractions import Fraction
-from warnings import warn
 
 class Simplex(object):
     def __init__(self, num_vars, constraints, objective_function):
@@ -137,7 +136,7 @@ class Simplex(object):
         if min_val == float("inf"):
             raise ValueError("Unbounded solution")
         if min_val == 0:
-            warn("Dengeneracy")     # wtf
+            print("Degeneracy")
         return min_i
 
     def normalize_to_pivot(self, key_row, pivot):
@@ -170,10 +169,10 @@ class Simplex(object):
                 else:
                     self.coeff_matrix[0][int(index)-1] = Fraction("-" + coeff[:-1] + "/1")
 
-    def check_alternate_solution(self):
+    def check_alternative_solution(self):
         for i in range(len(self.coeff_matrix[0])):
             if self.coeff_matrix[0][i] and i not in self.basic_vars[1:]:
-                warn("Alternate Solution exists")
+                print("Alternative solution exists.")
                 break
 
     def objective_minimize(self):
@@ -202,7 +201,7 @@ class Simplex(object):
         for i in range(0, self.num_vars):
             if i not in self.basic_vars[1:]:
                 solution['x_'+str(i+1)] = Fraction("0/1")
-        self.check_alternate_solution()
+        self.check_alternative_solution()
         return solution
 
     def objective_maximize(self):
@@ -232,7 +231,7 @@ class Simplex(object):
             if i not in self.basic_vars[1:]:
                 solution['x_'+str(i+1)] = Fraction("0/1")
 
-        self.check_alternate_solution()
+        self.check_alternative_solution()
 
         return solution
 
