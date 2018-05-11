@@ -76,6 +76,8 @@ class Simplex(object):
                     coeff, index = constraint[j].split('_')
                     coeff = coeff[:-1]
 
+                    if coeff is '':
+                        coeff = 1
                     if constraint[j - 1] is '-':
                         coeff = '-' + coeff
 
@@ -174,6 +176,8 @@ class Simplex(object):
                 coeff, index = objective_function_coeffs[i].split('_')
                 coeff = coeff[:-1]
 
+                if coeff is '':
+                    coeff = 1
                 if objective_function_coeffs[i - 1] is not '-':
                     coeff = '-' + coeff
 
@@ -182,7 +186,7 @@ class Simplex(object):
     def check_alternative_solution(self):
         for i in range(len(self.coeff_matrix[0])):
             if self.coeff_matrix[0][i] and i not in self.basic_vars[1:]:
-                print("Alternative solution exists.")
+                # alternative solution exists
                 break
 
     def objective_minimize(self):
