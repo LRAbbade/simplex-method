@@ -27,7 +27,6 @@ Here is an example:
 >>> constraints = ['3x_1 + 1x_2 = 3', '4x_1 + 3x_2 >= 6', '1x_1 + 2x_2 <= 4']
 >>> system = Simplex(num_vars=2, constraints=constraints, objective_function=objective)
 >>> print(system.solution())
-Alternative solution exists.
 Solution:
 x_1 = 3/5
 x_2 = 6/5
