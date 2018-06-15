@@ -6,9 +6,10 @@
 	2. \>= -> -
 
 + Montar a tabela:
-					| Variáveis de decisão 	| variáveis básicas | Lado Direito (resultados)
-Função objetivo		| (negativar as vars)	|					|
-variáveis básicas 	|						|					|
+|	 					| Variáveis de decisão 	| variáveis básicas | Lado Direito (resultados) |
+|----------------------:|:---------------------:|-------------------|---------------------------|
+| Função objetivo		| (negativar as vars)	|					|							|
+| variáveis básicas 	|						|					|							|
 
 + while (alguma variável de decisão na função objetivo < 0):
 	1. Pegar o mais negativo da função objetivo -> coluna pivot
