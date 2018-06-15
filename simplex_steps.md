@@ -6,6 +6,7 @@
 	2. \>= -> -
 
 + Montar a tabela:
+
 |	 					| Variáveis de decisão 	| variáveis básicas | Lado Direito (resultados) |
 |----------------------:|:---------------------:|-------------------|---------------------------|
 | Função objetivo		| (negativar as vars)	|					|							|
