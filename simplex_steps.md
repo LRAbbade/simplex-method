@@ -3,7 +3,7 @@
 + Montar o PPL
 + Colocar as variáveis básicas (ie. A, B, C...)
 	1. <= -> +
-	2. >= -> -
+	2. \>= -> -
 
 + Montar a tabela:
 					| Variáveis de decisão 	| variáveis básicas | Lado Direito (resultados)
