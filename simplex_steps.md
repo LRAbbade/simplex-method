@@ -19,7 +19,7 @@
 	4. Trocar o nome da coluna com o nome da linha do número pivot
 	5. Calcular a linha pivot pegando a linha do número pivot dividido por ele mesmo
 		(linha pivot / número pivot)
-	6. Zerar os números da coluna pivot multiplicando todas as linhas
+	6. Zerar os números da coluna pivot multiplicando todas as linhas  
 		(número[linha_atual][coluna atual] - número pivot * número[linha_pivot][coluna_atual])
 
 + Resultado ótimo estará em número[função_objetivo][lado_direito]
